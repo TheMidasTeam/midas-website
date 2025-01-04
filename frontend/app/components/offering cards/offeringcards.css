@@ -1,0 +1,9 @@
+.indiv-card-container{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 25px;
+    background-color: #191E23;
+    border-radius: 15px;
+    
+  }
