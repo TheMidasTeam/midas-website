@@ -1,7 +1,11 @@
-import OfferingCards from "./components/offering cards/offeringcards";
+import OfferingCards from "@/app/components/OfferingCards/OfferingCards";
+import PastWork from "@/app/components/PastWork/PastWork";
 
 export default function Home() {
   return (
-    <OfferingCards></OfferingCards>
+      <>
+        <OfferingCards></OfferingCards>
+        <PastWork></PastWork>
+      </>
   );
 }

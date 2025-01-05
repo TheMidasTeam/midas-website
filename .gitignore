@@ -8,7 +8,7 @@
 coverage/
 
 # Next.js build outputs
-.next/
+*/.next/
 out/
 
 # Production build
