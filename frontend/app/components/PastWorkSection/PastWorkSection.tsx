@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect } from 'react';
-// import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
 import ProjectLink from "./ProjectLink";
 
 export interface Project {
@@ -29,15 +28,17 @@ const projects: Project[] = [
 ];
 
 export default function PastWorkSection(): React.ReactNode {
-    const [ expandedIndex, setExpandedIndex ] = React.useState(0);
+    const [expandedIndex, setExpandedIndex] = React.useState(0);
+    //
+    const [hoveredProjectName, setHoveredProjectName] = useState<string | null>(null); // Index of the hovered element
 
     useEffect(() => {
         const interval = setInterval(() => {
             setExpandedIndex(prevExpandedIndex => (prevExpandedIndex + 1) % projects.length);
-        }, 1000);
+        }, 5000);
 
         return () => clearInterval(interval);
-    })
+    }, []);
 
     return (
         <section className="max-w-screen-2xl w-full mx-auto py-12 px-6"> {/* PastWork section container */}
@@ -45,9 +46,24 @@ export default function PastWorkSection(): React.ReactNode {
                 <h1 className="text-4xl font-black">Our Past Work</h1>
                 <div className="absolute right-0 w-[calc(100%-350px)] rounded-full h-4 bg-primary"></div>
             </div>
-            <div className={"flex w-full gap-4 h-[500px]"}>
+            <div className={"flex w-full gap-4 h-[500px] group"}>
                 {projects.map((project, index) => {
-                    return <ProjectLink key={crypto.randomUUID()} project={project} isExpanded={expandedIndex === index} />
+                    const isExpanded = expandedIndex === index;
+                    const isHovered = hoveredProjectName === project.name;
+                    const buttonClasses = `
+                        h-full rounded-xl border-2 transition-all duration-500 ease-in-out
+                        ${isHovered
+                            ? "w-full" // Hovered element expands
+                            : isExpanded && hoveredProjectName === null
+                                ? "w-full" // Expanded when no hover
+                                : "w-40" // Contracted for all other cases
+                        }`;
+                    return <ProjectLink
+                        key={project.name}
+                        project={project}
+                        buttonClasses={buttonClasses}
+                        setHoveredProjectName={setHoveredProjectName}
+                    />
                 })}
             </div>
         </section>
