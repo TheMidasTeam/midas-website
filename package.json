@@ -1,0 +1,21 @@
+{
+  "name": "midas-website",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/TheMidasTeam/midas-website#readme",
+  "bugs": {
+    "url": "https://github.com/TheMidasTeam/midas-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheMidasTeam/midas-website.git"
+  },
+  "license": "ISC",
+  "author": "Erick Alvarez and Ian Mann",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
