@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Caprasimo } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +17,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
+const caprasimo = Caprasimo({
+  weight: '400',
+  variable: "--font-caprasimo",
+  subsets: ['latin'],
+});
+
 export const metadata: Metadata = {
   title: "The Midas Website",
   description: "Created by Ian Mann and Erick Alvarez",
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${caprasimo.variable} antialiased`}
       >
         {children}
       </body>

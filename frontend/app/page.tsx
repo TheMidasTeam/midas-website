@@ -1,11 +1,13 @@
 import OfferingCards from "@/app/components/OfferingCards/OfferingCards";
-import PastWork from "@/app/components/PastWork/PastWork";
+import PastWorkSection from "@/app/components/PastWorkSection/PastWorkSection";
 
 export default function Home() {
   return (
       <>
-        <OfferingCards></OfferingCards>
-        <PastWork></PastWork>
+          <div className="wrapper-div px-2 max-w-screen-2xl mx-auto flex flex-col w-full">
+            <OfferingCards></OfferingCards>
+            <PastWorkSection></PastWorkSection>
+          </div>
       </>
   );
 }

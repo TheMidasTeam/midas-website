@@ -11,12 +11,14 @@
   --white: #FFFFFF;
   --background: var(--white);
   --foreground: #171717;
+  color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--black);
     --foreground: var(--secondary);
+    color: #FFFFFF;
   }
 }
 
@@ -28,4 +30,9 @@ body {
 
 .font-montserrat {
   font-family: var(--font-montserrat), sans-serif;
+}
+
+/*set default fonts for headings*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-caprasimo);
 }
