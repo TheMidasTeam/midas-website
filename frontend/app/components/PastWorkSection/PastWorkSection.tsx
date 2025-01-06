@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect } from 'react';
-// import Image from 'next/image';
+import React, { useState, useEffect } from 'react';
 import ProjectLink from "./ProjectLink";
 
 export interface Project {
@@ -11,33 +10,35 @@ export interface Project {
 
 const projects: Project[] = [
     {
-        name: "Project 1",
-        img_path: ""
+        name: "Piano\nOrganization",
+        img_path: "/images/projects/piano-org.png"
     },
     {
-        name: "Project 2",
-        img_path: ""
+        name: "Whittier\nDental",
+        img_path: "/images/projects/dentist-whittier.png"
     },
     {
-        name: "Project 3",
-        img_path: ""
+        name: "Photo\nBooth",
+        img_path: "/images/projects/photo-booth.png"
     },
     {
-        name: "Project 4",
-        img_path: ""
+        name: "Influencer\nMarketing",
+        img_path: "/images/projects/influencer-marketing.png"
     },
 ];
 
 export default function PastWorkSection(): React.ReactNode {
-    const [ expandedIndex, setExpandedIndex ] = React.useState(0);
+    const [expandedIndex, setExpandedIndex] = React.useState(0);
+    //
+    const [hoveredProjectName, setHoveredProjectName] = useState<string | null>(null); // Index of the hovered element
 
     useEffect(() => {
         const interval = setInterval(() => {
             setExpandedIndex(prevExpandedIndex => (prevExpandedIndex + 1) % projects.length);
-        }, 1000);
+        }, 5000);
 
         return () => clearInterval(interval);
-    })
+    }, []);
 
     return (
         <section className="max-w-screen-2xl w-full mx-auto py-12 px-6"> {/* PastWork section container */}
@@ -47,7 +48,22 @@ export default function PastWorkSection(): React.ReactNode {
             </div>
             <div className={"flex w-full gap-4 h-[500px]"}>
                 {projects.map((project, index) => {
-                    return <ProjectLink key={crypto.randomUUID()} project={project} isExpanded={expandedIndex === index} />
+                    const isExpanded = expandedIndex === index;
+                    const isHovered = hoveredProjectName === project.name;
+                    const buttonClasses = `
+                        h-full rounded-xl transition-all duration-500 ease-in-out overflow-hidden
+                        ${isHovered
+                            ? "w-full" // Hovered element expands
+                            : isExpanded && hoveredProjectName === null
+                                ? "w-full" // Expanded when no hover
+                                : "w-80" // Contracted for all other cases
+                        }`;
+                    return <ProjectLink
+                        key={project.name}
+                        project={project}
+                        buttonClasses={buttonClasses}
+                        setHoveredProjectName={setHoveredProjectName}
+                    />
                 })}
             </div>
         </section>
