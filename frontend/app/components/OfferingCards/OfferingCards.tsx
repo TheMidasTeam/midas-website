@@ -1,5 +1,5 @@
 import React from 'react';
-import './offeringcards.css';
+
 
 export default function OfferingCards() {
 
@@ -16,6 +16,10 @@ export default function OfferingCards() {
 
   return (
     <div className="max-w-screen-2xl w-full mx-auto py-12 px-6">{/*cards container*/}
+      <div className="relative flex items-center mb-10"> {/* header container */}
+                <div className="absolute left-0 w-[calc(100%-350px)] rounded-full h-4 bg-primary"></div>
+                <h1 className="text-4xl font-black">What We Offer</h1>
+            </div>
       <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 lg:grid-cols-4 gap-x-1 gap-y-10"> {/*cards wrapper with grid*/}
         {cards.map((card, index) => (
           <div key={index} className="flex flex-col w-[250px] p-[25px] bg-[#191E23] rounded-[15px]"> {/*indiv card container*/}
