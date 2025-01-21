@@ -1,6 +1,7 @@
 import OfferingCards from "@/app/components/OfferingCards/OfferingCards";
 import PastWorkSection from "@/app/components/PastWorkSection/PastWorkSection";
 import Components from "@/app/components/Components/Components";
+import FAQs from "@/app/components/FAQ/FAQs";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
             <Components></Components>
             <OfferingCards></OfferingCards>
             <PastWorkSection></PastWorkSection>
+            <FAQs></FAQs>
           </div>
       </>
   );
