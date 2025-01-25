@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Question } from "./Question";
 
 export interface QuestionType {
@@ -7,7 +9,10 @@ export interface QuestionType {
   answer: string;
 }
 
-export default function OfferingCards() {
+export default function FAQs() {
+  const [activeQuestionIds, setActiveQuestionIds] = useState<Set<number>>(
+    new Set()
+  );
   const questions: QuestionType[] = [
     {
       id: 1,
@@ -53,6 +58,18 @@ export default function OfferingCards() {
     },
   ];
 
+  const handleToggleQuestion = (id: number) => {
+    setActiveQuestionIds((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id); // Remove if it exists
+      } else {
+        newSet.add(id); // Add if it doesn't exist
+      }
+      return newSet;
+    });
+  };
+
   return (
     // FAQ section
     <section className="max-w-screen-2xl w-full mx-auto py-12 px-6">
@@ -70,10 +87,16 @@ export default function OfferingCards() {
         <button className="mb-10 font-montserrat font-semibold py-2 px-4 bg-primary rounded text-black">
           Get in Touch
         </button>
-        <div className="w-full max-w-screen-md flex flex-col items-center justify-center">
+        <div className="w-full max-w-screen-md flex flex-col items-center justify-center gap-2">
           {questions.map((question, index) => {
-            console.log("question:", question);
-            return <Question key={question.id} question={question} />;
+            return (
+              <Question
+                key={question.id}
+                question={question}
+                isActive={activeQuestionIds.has(question.id)}
+                handleToggleQuestion={handleToggleQuestion}
+              />
+            );
           })}
         </div>
       </div>

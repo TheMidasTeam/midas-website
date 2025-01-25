@@ -5,13 +5,13 @@ import FAQs from "@/app/components/FAQ/FAQs";
 
 export default function Home() {
   return (
-      <>
-          <div className="wrapper-div px-2 max-w-screen-2xl mx-auto flex flex-col w-full">
-            <Components></Components>
-            <OfferingCards></OfferingCards>
-            <PastWorkSection></PastWorkSection>
-            <FAQs></FAQs>
-          </div>
-      </>
+    <>
+      <div className="wrapper-div px-2 max-w-screen-2xl mx-auto flex flex-col w-full">
+        <Components></Components>
+        <OfferingCards></OfferingCards>
+        <PastWorkSection></PastWorkSection>
+        <FAQs></FAQs>
+      </div>
+    </>
   );
 }
