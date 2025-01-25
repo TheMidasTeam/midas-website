@@ -23,7 +23,7 @@ export const Question: React.FC<QuestionProps> = ({
       {/* ------------------------- Question Header Start ------------------------- */}
       <div className="QUESTION-TOP flex items-center font-caprasimo">
         <Icon
-          cn={`w-[40px] transition-transform duration-300 ${
+          cn={`w-[80px] transition-transform duration-300 ${
             isActive ? "-rotate-180" : ""
           }`}
           strokeWidth="2"
@@ -31,7 +31,7 @@ export const Question: React.FC<QuestionProps> = ({
           w="20"
           icon="carrot"
         ></Icon>
-        <span className="">{question.question}</span>
+        <span className="text-2xl">{question.question}</span>
       </div>
       {/* ------------------------- Question Header End ------------------------- */}
       <div
@@ -39,7 +39,9 @@ export const Question: React.FC<QuestionProps> = ({
           isActive ? "max-h-[200px]" : "max-h-0 duration-100"
         }`}
       >
-        <p className="ANSWER ml-[40px] font-montserrat">{question.answer}</p>
+        <p className="ANSWER ml-[80px] mt-4 font-montserrat">
+          {question.answer}
+        </p>
       </div>
     </div>
   );
