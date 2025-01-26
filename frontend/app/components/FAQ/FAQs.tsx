@@ -75,7 +75,7 @@ export default function FAQs() {
     <section className="max-w-screen-2xl w-full mx-auto py-12 px-6">
       {/* ------------------------- header start ------------------------- */}
       <div className="relative flex items-center mb-10 gap-4">
-        <div className="w-[calc(90%-350px)] rounded-full h-4 bg-primary"></div>
+        <div className="w-[calc(100%-350px)] rounded-full h-4 bg-primary"></div>
         <h1 className="text-center text-4xl font-thin w-full">
           Frequently Asked Questions
         </h1>
