@@ -3,6 +3,7 @@ import PastWorkSection from "@/app/components/PastWorkSection/PastWorkSection";
 import Components from "@/app/components/Components/Components";
 import FAQs from "@/app/components/FAQ/FAQs";
 import Contact from "@/app/components/Contact/Contact";
+import ReviewCarousel from "@/app/components/Reviews/Reviews";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Components />
         <OfferingCards />
         <PastWorkSection />
+        <ReviewCarousel />
         <FAQs />
         <Contact />
       </div>
