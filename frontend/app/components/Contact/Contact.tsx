@@ -27,7 +27,7 @@ export default function Contact() {
       </div>
       <div className="SUBHEADING flex items-center justify-center">
         <p className="text-primary font-montserrat">
-          We'd love to learn more about your business and goals!
+          We&apos;d love to learn more about your business and goals!
         </p>
       </div>
       <div>

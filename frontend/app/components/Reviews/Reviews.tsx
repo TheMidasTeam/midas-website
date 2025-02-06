@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const reviews = [
   {
@@ -21,18 +22,32 @@ const reviews = [
   },
 ];
 
-const ReviewCard = ({ text, name, title, photo }) => (
+interface ReviewCardProps {
+  text: string;
+  name: string;
+  title: string;
+  photo: string;
+}
+
+const ReviewCard: React.FC<ReviewCardProps> = ({
+  text,
+  name,
+  title,
+  photo,
+}) => (
   <div className="bg-zinc-900 rounded-xl p-6 w-[320px] mx-4 flex-shrink-0 relative font-montserrat">
     <div className="text-yellow-400 text-6xl font-serif absolute top-6 left-6">
-      "
+      &quot;
     </div>
     <p className="text-white text-base leading-relaxed mb-6 mt-4 pt-6">
       {text}
     </p>
     <div className="flex items-center gap-3">
-      <img
+      <Image
         src={photo}
         alt={`${name}'s photo`}
+        width={48}
+        height={48}
         className="w-12 h-12 rounded-full object-cover"
       />
       <div>

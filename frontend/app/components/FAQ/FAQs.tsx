@@ -88,7 +88,7 @@ export default function FAQs() {
           Get in Touch
         </button>
         <div className="w-full max-w-screen-md flex flex-col items-center justify-center gap-2">
-          {questions.map((question, index) => {
+          {questions.map((question) => {
             return (
               <Question
                 key={question.id}

@@ -20,6 +20,15 @@
     "install:all": "npm install && npm run install:subdirs",
     "install:subdirs": "npm run install:frontend && npm run install:backend",
     "install:frontend": "cd frontend && npm install -D",
-    "install:backend":  "cd backend && npm install -D"
+    "install:backend": "cd backend && npm install -D"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^8.17.14",
+    "gsap": "^3.12.7",
+    "three": "^0.173.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.173.0"
   }
 }
