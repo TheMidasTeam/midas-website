@@ -21,7 +21,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="w-full h-[90vh] bg-black flex flex-col items-center justify-center space-y-6">
+        <section className="w-full h-[90vh] flex flex-col items-center justify-center space-y-6">
             {animateRows.map((animated, rowIndex) => (
                 <div 
                     key={rowIndex} 
@@ -32,7 +32,7 @@ export default function Hero() {
                         return (
                             <span
                                 key={itemIndex}
-                                className="w-[60px] flex justify-center items-center transition-colors duration-500 text-blue-500 hover:text-yellow-500 cursor-pointer"
+                                className=" -ml-20 w-[500px] flex justify-center items-center transition-colors duration-500 text-blue-500 hover:text-yellow-500 cursor-pointer font-caprasimo text-8xl"
                                 onMouseEnter={() => handleHover(itemIndex)}
                             >
                                 <span className={`transition-opacity duration-500 ${hovered[itemIndex] ? "opacity-0" : "opacity-100"}`}>
@@ -47,12 +47,12 @@ export default function Hero() {
                 </div>
             ))}
 
-            <div className="text-center text-white text-lg">
-                Redefining the <span className="text-yellow-500">gold</span> standard of website design
+            <div className="text-center text-white text-4xl">
+                Redefining the <span className="text-yellow-500 italic ">gold</span> standard of website design
             </div>
 
             <div>
-                <button className="bg-yellow-500 text-black rounded-full px-6 py-3 font-semibold transition hover:bg-yellow-600">
+                <button className="bg-yellow-500 text-black rounded-full px-8 py-5 font-semibold transition hover:bg-yellow-600 text-2xl">
                     Book a Free Consultation
                 </button>
             </div>
