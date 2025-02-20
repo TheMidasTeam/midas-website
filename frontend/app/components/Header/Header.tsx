@@ -8,41 +8,52 @@ export default function Header() {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const timeoutId = useRef<NodeJS.Timeout | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const lastActivityTimestamp = useRef(Date.now());
+  const animationFrameId = useRef<number | null>(null);
 
   useEffect(() => {
+    const checkInactivity = () => {
+      if (Date.now() - lastActivityTimestamp.current > 3000 && window.scrollY > 0 && !isHovered) {
+        setIsNavVisible(false);
+      } else {
+        animationFrameId.current = requestAnimationFrame(checkInactivity);
+      }
+    };
+
     const handleScroll = () => {
-      if (window.scrollY === 0) {
-        // If the user is at the top, keep the nav bar visible
+      const currentScrollY = window.scrollY;
+      lastActivityTimestamp.current = Date.now(); // Reset activity timer
+
+      if (currentScrollY === 0) {
         setIsNavVisible(true);
         setHasScrolled(false);
-        if (timeoutId.current) clearTimeout(timeoutId.current);
         return;
       }
 
-      // User started scrolling, set hasScrolled to true
       if (!hasScrolled) setHasScrolled(true);
 
-      if (window.scrollY > lastScrollY) {
-        setIsNavVisible(false); // Hide when scrolling down
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down → Hide navbar
+        setIsNavVisible(false);
       } else {
-        setIsNavVisible(true); // Show when scrolling up
+        // Scrolling up → Show navbar and start inactivity check
+        setIsNavVisible(true);
+        if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+        animationFrameId.current = requestAnimationFrame(checkInactivity);
       }
-      setLastScrollY(window.scrollY);
 
-      // Start inactivity timeout only after scrolling begins
-      if (hasScrolled) {
-        if (timeoutId.current) clearTimeout(timeoutId.current);
-        timeoutId.current = setTimeout(() => setIsNavVisible(false), 3000); // Hide after 3s of inactivity
-      }
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
+    animationFrameId.current = requestAnimationFrame(checkInactivity);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (timeoutId.current) clearTimeout(timeoutId.current);
+      if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
     };
-  }, [lastScrollY, hasScrolled]);
+  }, [lastScrollY, hasScrolled, isHovered]);
 
   return (
     <>
@@ -61,23 +72,28 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* Floating Navigation Bar (ONLY hides after scrolling & inactivity) */}
+      {/* Floating Navigation Bar */}
       <nav
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => {
+          setIsHovered(false);
+          lastActivityTimestamp.current = Date.now(); // Restart inactivity timer on leave
+        }}
         className={`fixed top-6 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
           isNavVisible ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
         } bg-gray-900 text-white rounded-full px-6 py-3 shadow-lg z-40`}
       >
         <div className="flex space-x-6">
-          <Link href="#services" className="hover:text-gray-300 transition">
+          <Link href="#OfferingCards" className="hover:text-gray-300 transition">
             Services
           </Link>
-          <Link href="#portfolio" className="hover:text-gray-300 transition">
+          <Link href="#PastWork" className="hover:text-gray-300 transition">
             Portfolio
           </Link>
-          <Link href="#reviews" className="hover:text-gray-300 transition">
+          <Link href="#Reviews" className="hover:text-gray-300 transition">
             Reviews
           </Link>
-          <Link href="#faqs" className="hover:text-gray-300 transition">
+          <Link href="#FAQs" className="hover:text-gray-300 transition">
             FAQs
           </Link>
         </div>
@@ -85,6 +101,13 @@ export default function Header() {
     </>
   );
 }
+
+
+
+
+
+
+
 
 
 

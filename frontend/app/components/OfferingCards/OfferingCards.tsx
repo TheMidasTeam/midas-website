@@ -13,7 +13,7 @@ export default function OfferingCards() {
   ];
 
   return (
-    <div className="max-w-screen-2xl w-full mx-auto py-12 px-6">
+    <div id="OfferingCards" className="max-w-screen-2xl w-full mx-auto py-12 px-6">
       {/*cards container*/}
       <div className="relative flex items-center justify-between mb-10">
         {" "}

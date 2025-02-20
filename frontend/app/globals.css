@@ -32,6 +32,14 @@ body {
   font-family: var(--font-montserrat), sans-serif;
 }
 
+.font-Caprasimo {
+  font-family: var(--font-caprasimo), serif;
+}
+
+.font-crimson {
+  font-family: var(--font-crimson-text), serif;
+}
+
 /*set default fonts for headings*/
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-caprasimo);

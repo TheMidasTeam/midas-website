@@ -41,7 +41,7 @@ export default function PastWorkSection(): React.ReactNode {
     }, []);
 
     return (
-        <section className="max-w-screen-2xl w-full mx-auto py-12 px-6"> {/* PastWork section container */}
+        <section id="PastWork" className="max-w-screen-2xl w-full mx-auto py-12 px-6"> {/* PastWork section container */}
             <div className="relative flex items-center mb-10"> {/* header container */}
                 <h1 className="text-4xl font-thin">Our Past Work</h1>
                 <div className="absolute right-0 w-[calc(100%-350px)] rounded-full h-4 bg-primary"></div>

@@ -35,7 +35,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   title,
   photo,
 }) => (
-  <div className="bg-zinc-900 rounded-xl p-6 w-[320px] mx-4 flex-shrink-0 relative font-montserrat">
+  <div  id="Reviews" className="bg-zinc-900 rounded-xl p-6 w-[320px] mx-4 flex-shrink-0 relative font-montserrat">
     <div className="text-yellow-400 text-6xl font-serif absolute top-6 left-6">
       &quot;
     </div>
@@ -80,12 +80,18 @@ const CarouselTrack = ({ direction = 'left' }) => (
 
 const ReviewCarousel = () => {
   return (
-    <div className="relative w-full overflow-hidden bg-gray-800 text-white rounded-xl">
-      <div className="w-full overflow-hidden py-8">
-        <CarouselTrack direction="left" />
+    <div>
+      <div className="relative flex items-center justify-between mb-10">
+        <div className="w-[calc(100%-550px)] rounded-full h-4 bg-primary"></div>
+        <h1 className="text-4xl font-thin">What People Are Saying</h1>
       </div>
-      <div className="w-full overflow-hidden py-8">
-        <CarouselTrack direction="right" />
+      <div className="relative w-full overflow-hidden bg-gray-800 text-white rounded-xl">
+        <div className="w-full overflow-hidden py-8">
+          <CarouselTrack direction="left" />
+        </div>
+        <div className="w-full overflow-hidden py-8">
+          <CarouselTrack direction="right" />
+        </div>
       </div>
     </div>
   );
