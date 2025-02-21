@@ -65,7 +65,7 @@ export default function Header() {
         </Link>
 
         {/* Contact Us Button */}
-        <Link href="#contact">
+        <Link href="#Contact">
           <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
             Contact Us
           </button>

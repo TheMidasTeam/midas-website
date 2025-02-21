@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -51,11 +52,11 @@ export default function Hero() {
                 Redefining the <span className="text-yellow-500 italic ">gold</span> standard of website design
             </div>
 
-            <div>
+            <Link href="#Contact">
                 <button className="bg-yellow-500 text-black rounded-full px-7 py-3 font-semibold transition hover:bg-yellow-600 text-xl">
                     Book a Free Consultation
                 </button>
-            </div>
+            </Link>
         </section>
     );
 }
