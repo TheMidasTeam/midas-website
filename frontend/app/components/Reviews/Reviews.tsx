@@ -20,6 +20,48 @@ const reviews = [
     title: 'Founder of XYZ Dentistry',
     photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
   },
+  {
+    text: 'A truly outstanding team that turns challenges into opportunities with brilliant ideas!',
+    name: 'Michael Chen',
+    title: 'Director at FinTech Solutions',
+    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+  },
+  {
+    text: 'Their innovative approach has elevated our brand and set us apart from the competition.',
+    name: 'Samantha Lee',
+    title: 'Marketing Manager at Retail Corp',
+    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+  },
+  {
+    text: 'Professional, efficient, and incredibly creative – they transformed our online presence!',
+    name: 'Jonathan Brooks',
+    title: 'Founder of Startup X',
+    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+  },
+  {
+    text: 'We appreciate their attention to detail and ability to deliver projects ahead of deadlines!',
+    name: 'Olivia Harris',
+    title: 'VP of Product at SaaS Company',
+    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+  },
+  {
+    text: 'Working with them has been a pleasure – they understand our needs and deliver flawlessly.',
+    name: 'Ethan Martinez',
+    title: 'Head of Design at Tech Firm',
+    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+  },
+  {
+    text: 'Their dedication and talent have made a lasting impact on our brand strategy.',
+    name: 'Grace Thompson',
+    title: 'CEO of Wellness Co.',
+    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+  },
+  {
+    text: 'An amazing team with a passion for innovation – they truly care about their clients!',
+    name: 'David Foster',
+    title: 'Managing Director at Media Group',
+    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+  },
 ];
 
 interface ReviewCardProps {

@@ -15,9 +15,9 @@ export default function Hero() {
         );
 
         return () => timeouts.forEach(clearTimeout);
-    }, []);
+    }, [animateRows]);
 
-    const handleHover = (index) => {
+    const handleHover = (index: number) => {
         setHovered(prev => prev.map((val, i) => (i === index ? true : val)));
     };
 
@@ -28,7 +28,7 @@ export default function Hero() {
                     key={rowIndex} 
                     className={`grid grid-cols-4 gap-4 transition-opacity duration-700 ${animated ? "opacity-100" : "opacity-0"}`}
                 >
-                    {Array(4).fill().map((_, colIndex) => {
+                    {Array(4).fill(null).map((_, colIndex) => {
                         const itemIndex = rowIndex * 4 + colIndex;
                         return (
                             <span
