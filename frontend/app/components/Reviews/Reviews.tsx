@@ -3,66 +3,67 @@ import Image from 'next/image';
 
 const reviews = [
   {
-    text: 'From concept to execution, their creativity knows no bound – a game changer for us.',
-    name: 'Raymond Williams',
-    title: 'CEO of ABC Insurance',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "Their creativity and attention to detail completely transformed our brand. We couldn't be happier with the results!",
+    name: "Raymond Williams",
+    title: "CEO, BrightPath Insurance",
+    photo: "https://via.placeholder.com/48", // Replace with actual photo URL
   },
   {
-    text: 'A refreshing and imaginative agency that consistently delivers for us and our team.',
-    name: 'Alejandra Reyes',
-    title: 'Co-Founder at Consultancy',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "Working with them was a breath of fresh air. They truly understood our vision and brought it to life effortlessly.",
+    name: "Alejandra Reyes",
+    title: "Co-Founder, StratEdge Consulting",
+    photo: "https://via.placeholder.com/48",
   },
   {
-    text: 'They exceeded our expectations with creative designs that brought our vision to life!',
-    name: 'Jessica Parks',
-    title: 'Founder of XYZ Dentistry',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "They took our ideas and elevated them beyond our expectations. The design work was spot-on!",
+    name: "Jessica Parks",
+    title: "Founder, Parkview Dental Studio",
+    photo: "https://via.placeholder.com/48",
   },
   {
-    text: 'A truly outstanding team that turns challenges into opportunities with brilliant ideas!',
-    name: 'Michael Chen',
-    title: 'Director at FinTech Solutions',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "A talented team that knows how to turn complex challenges into beautiful, functional solutions. Highly recommend!",
+    name: "Michael Chen",
+    title: "Director, Vertex FinTech",
+    photo: "https://via.placeholder.com/48",
   },
   {
-    text: 'Their innovative approach has elevated our brand and set us apart from the competition.',
-    name: 'Samantha Lee',
-    title: 'Marketing Manager at Retail Corp',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "Their expertise helped us build a stronger brand presence and stand out in a competitive market. Fantastic work!",
+    name: "Samantha Lee",
+    title: "Marketing Manager, Haven Retail",
+    photo: "https://via.placeholder.com/48",
   },
   {
-    text: 'Professional, efficient, and incredibly creative – they transformed our online presence!',
-    name: 'Jonathan Brooks',
-    title: 'Founder of Startup X',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "They were professional, efficient, and incredibly creative. Our website has never looked better!",
+    name: "Jonathan Brooks",
+    title: "Founder, Launchpad Startup Studio",
+    photo: "https://via.placeholder.com/48",
   },
   {
-    text: 'We appreciate their attention to detail and ability to deliver projects ahead of deadlines!',
-    name: 'Olivia Harris',
-    title: 'VP of Product at SaaS Company',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "Reliable, detail-oriented, and always one step ahead. They helped us meet tight deadlines without compromising quality.",
+    name: "Olivia Harris",
+    title: "VP of Product, Nimbus Software",
+    photo: "https://via.placeholder.com/48",
   },
   {
-    text: 'Working with them has been a pleasure – they understand our needs and deliver flawlessly.',
-    name: 'Ethan Martinez',
-    title: 'Head of Design at Tech Firm',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "A great team to work with! They listened to our needs and delivered a product that exceeded our expectations.",
+    name: "Ethan Martinez",
+    title: "Head of Design, Apex Technologies",
+    photo: "https://via.placeholder.com/48",
   },
   {
-    text: 'Their dedication and talent have made a lasting impact on our brand strategy.',
-    name: 'Grace Thompson',
-    title: 'CEO of Wellness Co.',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "Their insights and creative approach gave our brand a fresh perspective. The impact has been incredible!",
+    name: "Grace Thompson",
+    title: "CEO, Elevate Wellness",
+    photo: "https://via.placeholder.com/48",
   },
   {
-    text: 'An amazing team with a passion for innovation – they truly care about their clients!',
-    name: 'David Foster',
-    title: 'Managing Director at Media Group',
-    photo: 'https://via.placeholder.com/48', // Replace with actual photo URL
+    text: "Passionate, skilled, and genuinely invested in their clients' success. We’ve had a fantastic experience working with them.",
+    name: "David Foster",
+    title: "Managing Director, Pulse Media",
+    photo: "https://via.placeholder.com/48",
   },
 ];
+
 
 interface ReviewCardProps {
   text: string;
