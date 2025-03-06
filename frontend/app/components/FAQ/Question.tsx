@@ -15,8 +15,8 @@ export const Question: React.FC<QuestionProps> = ({
 }) => {
   return (
     <div
-      className={`QUESTION-CONTAINER w-full p-4 rounded-2xl hover:cursor-pointer ${
-        isActive ? "border-2 border-white p-10" : ""
+      className={`QUESTION-CONTAINER w-full p-4 rounded-2xl hover:cursor-pointer border-2 ${
+        isActive ? "border-white p-10" : "border-transparent"
       }`}
       onClick={() => handleToggleQuestion(question.id)}
     >
@@ -39,9 +39,15 @@ export const Question: React.FC<QuestionProps> = ({
           isActive ? "max-h-[200px]" : "max-h-0 duration-100"
         }`}
       >
-        <p className="ANSWER ml-[80px] mt-4 font-montserrat">
+        {/* <p className="ANSWER ml-[80px] mt-4 font-montserrat">
           {question.answer}
-        </p>
+        </p> */}
+        {question.answer.map((line, index) => (
+          // <p key={index} className="mt-2">
+          <p key={index} className="ANSWER ml-[80px] mt-4 font-montserrat">
+            {line}
+          </p>
+        ))}
       </div>
     </div>
   );
