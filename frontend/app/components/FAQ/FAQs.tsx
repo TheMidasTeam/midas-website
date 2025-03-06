@@ -6,7 +6,7 @@ import { Question } from "./Question";
 export interface QuestionType {
   id: number;
   question: string;
-  answer: string;
+  answer: string[];
 }
 
 export default function FAQs() {
@@ -16,45 +16,60 @@ export default function FAQs() {
   const questions: QuestionType[] = [
     {
       id: 1,
-      question: "What is the cost of a website?",
-      answer:
-        "The cost of a website can vary depending on various factors such as the complexity of the design, the number of pages, and the features you want to include. We offer a free consultation to discuss your needs and provide you with a quote.",
+      question: "Will my website be mobile-friendly?",
+      answer: [
+        `Absolutely! We design all websites to be fully responsive, ensuring a seamless experience on desktops, tablets, and smartphones.`,
+      ],
     },
     {
       id: 2,
-      question: "How long does it take to build a website?",
-      answer:
-        "The time it takes to build a website can vary depending on the size and complexity of the project. We will work with you to establish a timeline and keep you updated on the progress throughout the process.",
+      question: "How long is the process from start to finish?",
+      answer: [
+        `We generally finish a website from start to finish within 2-4 weeks. 
+      It all depends on how soon clients respond to our content and image requests, as well as the availability of our designers and developers.
+      Sometimes it can be 2 weeks, sometimes 3.`,
+      ],
     },
     {
       id: 3,
-      question: "Do you offer maintenance services?",
-      answer:
-        "Yes, we offer maintenance services to ensure that your website is up-to-date and running smoothly. We can provide regular updates, security checks, and technical support to keep your site running smoothly.",
+      question: "Can you help with website hosting and domain setup?",
+      answer: [
+        `Yes! We assist with domain registration and recommend reliable hosting providers to ensure your website is secure, fast, and always online.`,
+      ],
     },
     {
       id: 4,
-      question: "Can you help with SEO?",
-      answer:
-        "Yes, we offer SEO services to help improve your website's visibility in search engines. We can help you optimize your site for relevant keywords, create quality content, and build backlinks to improve your search engine rankings.",
+      question: "Do you own our domain?",
+      answer: [
+        `Nope, your domain is all yours. This will never change. If you choose to discontinue your hosting contract with us for any reason,
+        you have full control of your domain and can point it to any other servers of your choice without any action from us.`,
+      ],
     },
     {
       id: 5,
-      question: "Can you help with SEO?",
-      answer:
-        "Yes, we offer SEO services to help improve your website's visibility in search engines. We can help you optimize your site for relevant keywords, create quality content, and build backlinks to improve your search engine rankings.",
+      question: "Do you offer SEO services?",
+      answer: [
+        `Yes, we do! But let’s be real — SEO is a long-term game, not a quick fix. If anyone promises to get you to the top of Google in a month, run the other way! 
+      Good SEO takes time (typically 6-12 months) and depends on factors like competition, backlinks, and content quality.`,
+        `We focus on high-quality content and proven SEO strategies to help your site rank higher organically. 
+      Our approach isn’t about tricking search engines—it’s about building authority and trust with Google over time. 
+      Whether you’re in a competitive market or a niche industry, we’ll craft an SEO strategy that works for you.`,
+      ],
     },
     {
       id: 6,
-      question: "Can you help with SEO?",
-      answer:
-        "Yes, we offer SEO services to help improve your website's visibility in search engines. We can help you optimize your site for relevant keywords, create quality content, and build backlinks to improve your search engine rankings.",
+      question: "How do I request edits to our site?",
+      answer: [
+        `We'll provide you with our contact information as well as a Site Edit Request Template.
+        You'll be able to specify everything you need to have your site looking exactly how you want it.`,
+      ],
     },
     {
       id: 7,
-      question: "Can you help with SEO?",
-      answer:
-        "Yes, we offer SEO services to help improve your website's visibility in search engines. We can help you optimize your site for relevant keywords, create quality content, and build backlinks to improve your search engine rankings.",
+      question: "What happens if I need help after my website is live?",
+      answer: [
+        `We offer post-launch support and maintenance packages to address any issues, updates, or enhancements you may need. You can also contact us for support requests.`,
+      ],
     },
   ];
 
